@@ -1,27 +1,11 @@
+"use strict";
+
+// var mongoose = require('mongoose');
+var app = require("./app");
 const dotenv = require("dotenv");
 dotenv.config();
-var app = express();
+var port = process.env.PORT || 3999;
 
-// view engine setup
-// app.set("views", path.join(__dirname, "views"));
-// app.set("view engine", );
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(/admin(istrador)?\cursos/, admin); // new Regexp('admin')
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  next(createError(404));
+app.listen(port, () => {
+  console.log("El servidor http://localhost:3999 está funcionando !!!");
 });
-
-// error handler
-app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get("env") === "development" ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render("error");
-});
-
-module.exports = app;

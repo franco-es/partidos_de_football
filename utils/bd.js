@@ -10,7 +10,7 @@ let pool = mysql.createPool({
   password: process.env.DB_PASSWORD || "",
   user: process.env.DB_USER || "root",
   port: process.env.DB_PORT || 3308,
-  database: process.env.DB_NAME || "test",
+  database: process.env.DB_NAME || "leicester",
   connectionLimit: 10,
 });
 pool.query = util.promisify(pool.query);
